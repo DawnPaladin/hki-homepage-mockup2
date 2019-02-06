@@ -1,0 +1,92 @@
+// SCSS to CSS with https://www.sassmeister.com/
+// Prefix CSS with https://autoprefixer.github.io/
+
+.grid {
+	display: -ms-grid;
+	display: grid;
+}
+.award-header { -ms-grid-row: 1; -ms-grid-column: 1; -ms-grid-column-span: 7; grid-area: award-header; }
+.globe-header { -ms-grid-row: 1; -ms-grid-column: 13; -ms-grid-column-span: 5; grid-area: globe-header; }
+.award-photo { -ms-grid-row: 3; -ms-grid-column: 3; -ms-grid-column-span: 5; grid-area: award-photo; }
+.bk-text { -ms-grid-row: 5; -ms-grid-column: 3; grid-area: bk-text; }
+.customer-obsessed-text { -ms-grid-row: 5; -ms-grid-column: 5; grid-area: customer-obsessed-text; }
+.equipment-supplier-text { -ms-grid-row: 5; -ms-grid-column: 7; grid-area: equipment-supplier-text; }
+.margin-left { grid-area: margin-left; }
+.margin-right { grid-area: margin-right; }
+.globe-row { -ms-grid-row: 3; -ms-grid-column: 13; grid-area: globe; }
+.globe-text { -ms-grid-row: 5; -ms-grid-column: 13; grid-area: globe-text; }
+.globe-margin-left { -ms-grid-row: 1; -ms-grid-row-span: 5; -ms-grid-column: 11; grid-area: globe-margin-left; }
+.globe-margin-right { -ms-grid-row: 3; -ms-grid-row-span: 3; -ms-grid-column: 17; grid-area: globe-margin-right; }
+.award-margin-left { -ms-grid-row: 3; -ms-grid-row-span: 3; -ms-grid-column: 1; grid-area: award-margin-left; }
+.award-margin-right { -ms-grid-row: 1; -ms-grid-row-span: 5; -ms-grid-column: 9; grid-area: award-margin-right; }
+
+.grid {
+	@media (min-width: 1420px) {
+		grid-gap: 0;
+		-ms-grid-rows: 80px 0 530px 0 120px;
+		grid-template-rows: 80px 530px 120px;
+		-ms-grid-columns: minmax(0, auto) 0 310px 0 265px 0 190px 0 50px 0 50px 0 550px 0 minmax(0, calc(310px + 265px + 190px - 550px)) 0 0px 0 minmax(0, auto);
+		grid-template-columns: minmax(0, auto) 310px 265px 190px 50px 50px 550px minmax(0, calc(310px + 265px + 190px - 550px)) 0px minmax(0, auto);
+			grid-template-areas: "award-header award-header award-header award-header award-margin-right globe-margin-left globe-header globe-header globe-header" "award-margin-left award-photo award-photo award-photo award-margin-right globe-margin-left globe globe-padding-right globe-margin-right" "award-margin-left bk-text customer-obsessed-text equipment-supplier-text award-margin-right globe-margin-left globe-text globe-padding-right globe-margin-right";
+		.award-header { text-align: right; }
+		.globe-header { text-align: left; }
+		.planet-img, .award-vector { display: none; }	}
+	@media (max-width: 1419px) and (min-width: 768px) {
+		grid-template-rows: 80px auto 120px 80px 530px 120px;
+		grid-template-columns: auto 310px 265px 190px auto;
+		grid-template-areas: 
+			"award-margin-left award-header award-header award-header award-margin-right" 
+			"award-margin-left award-photo award-photo award-photo award-margin-right" 
+			"award-margin-left bk-text customer-obsessed-text equipment-supplier-text award-margin-right" 
+			"globe-margin-left globe-header globe-header globe-header globe-margin-right" 
+			"globe-margin-left globe globe globe globe-margin-right" 
+			"globe-margin-left globe-text globe-text globe-text globe-margin-right";
+		.award-header, .globe-header { text-align: center; }
+		.award-photo, .award-photo img { max-width: 100%; }
+		.planet-img, .award-vector { display: none; }
+	}
+	@media (max-width: 767px) {
+		grid-template-rows: auto auto auto auto auto auto auto;
+		grid-template-columns: auto;
+		grid-template-areas: "award-header" "award-vector" "bk-text" "customer-obsessed-text" "equipment-supplier-text" "globe-header" "globe-text" "planet-img";
+		.award-margin-left, .award-margin-right, .globe-margin-left, .globe-margin-right, .award-photo, .globe-row { display: none; }
+		text-align: center;
+		.planet-img { 
+			grid-area: "planet-img";
+			width: 100%;
+			height: 200px;
+			background: url('../img/planet.png');
+			background-size: auto 200px;
+			background-repeat: repeat-x;
+		}
+		.award-vector {
+			grid-area: "award-vector";
+			background-color: black;
+			img {
+				margin: 10px auto;
+				max-width: 100%;
+				
+			}
+		}
+		.award-header, .bk-text, .customer-obsessed-text, .equipment-supplier-text, .globe-header, .globe-text {
+			padding: 10px;
+		}
+		.equipment-supplier-text {
+			padding-bottom: 20px;
+		}
+	}
+	
+	.award-header, .globe-header {
+		padding-top: 20px;
+	}
+	.award-photo img {
+		max-width: 100%;
+	}
+	.bk-text, .customer-obsessed-text, .equipment-supplier-text {
+		padding: 10px;
+	}
+	.globe-row { position: relative; }
+	.award-header, .award-margin-left, .award-margin-right, .award-photo, .bk-text, .customer-obsessed-text, .equipment-supplier-text {
+		background-color: black;
+	}
+}

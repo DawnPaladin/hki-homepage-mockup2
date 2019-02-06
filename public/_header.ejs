@@ -1,0 +1,41 @@
+<div class="container-fluid header-bg">
+	<div class="row">
+		<div class="container">
+			<div class="header row">
+				<a class="home-link" href="/">
+					<img alt="H+K International" src="/img/horizontal-dark-logo.png" />
+				</a>
+				<a href="#" class="nav-toggle">&#9776; Navigation</a>
+				<div class="aux-nav">
+					<div class="header-nav-group">
+						<div class="employee-login">
+							<a href="https://www.hki.com/login">
+								<span>Employee Login</span>
+								<img src="http://apps.hki.com/homepage/dist/img/icons/employee-badge.png" alt="employee badge" />
+							</a>
+						</div>
+						<div class="search-group">
+							<form action="http://hki.com/search">
+								<div class="search-box input-group">
+									<input class="form-control" type="text" name="searchQuery" aria-label="Search" />
+									<input type="hidden" name="indexCatalogue" value="search-index-1" />
+									<input type="hidden" name="wordsMode" value="0" />
+									<span class="input-group-btn">
+										<button class="btn btn-secondary" type="submit">Search</button>
+									</span>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$('.nav-toggle').click(function() {
+		$('.navbar-bg, .site-bar, .aux-nav').toggle();
+		$('.hero, .customer-obsessed').trigger('resize'); // notify parallax plugin that page layout has changed
+	});
+</script>

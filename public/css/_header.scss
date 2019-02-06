@@ -1,0 +1,89 @@
+@import 'partials';
+
+.header-bg {
+	background-color: hsl(0, 0%, 10%);
+}
+.header {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	a {
+		transition: color .25s;
+	}
+	.home-link {
+		margin: 20px;
+		flex-grow: 1;
+	}
+	.home-link img {
+		max-width: 100%;
+	}
+
+	.header-nav-group {
+		flex-grow: 1;
+		display: flex;
+		@media (min-width: 992px) {
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: center;
+		}
+		@media (max-width: 991px) {
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: center;
+			padding: 10px;
+		}
+	}
+	.aux-nav {
+		@media (max-width: 991px) {
+			display: none;
+			width: 100%;
+		}
+	}
+	.search-group {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		@media (min-width: 768px) {
+			margin-top: 1em;
+		}
+	}
+	.employee-login {
+		@include light-emphasis;
+		a { color: hsl(0, 0, 80%); }
+		@media (min-width: 768px) {
+			margin-top: 1em;
+		}
+		span {
+			@media (max-width: 430px) {
+				display: none;
+			}
+		}
+	}
+
+	.search-box {
+		width: 250px;
+		input {
+			background-color: hsl(0, 0, 80%);
+		}
+		button.btn {
+			background-color: hsl(0, 0, 20%);
+			color: hsl(0, 0, 80%);
+			@include light-emphasis;
+		}
+	}
+}
+.nav-toggle:link, .nav-toggle:visited, .nav-toggle:hover, .nav-toggle:active {
+	color: hsl(0, 0, 80%);
+}
+.nav-toggle {
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 10px;
+	@media (min-width: 992px) {
+		display: none;
+	}
+}

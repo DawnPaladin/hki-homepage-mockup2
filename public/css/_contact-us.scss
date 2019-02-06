@@ -1,0 +1,38 @@
+@import 'partials';
+
+.contact-us {
+	padding-top: 3em;
+	padding-bottom: 3em;
+	font-size: 26px;
+	line-height: 51px;
+	color: hsl(0, 0%, 80%);
+	font-weight: 500;
+	@media (min-width: 489px) {
+		@include darken-bg(.75);
+	}
+	.contact-us-btn-wrapper {
+		min-width: 300px;
+		text-align: center;
+	}
+	.contact-us-btn-wrapper::before {
+		content: url("../img/triangles-before.svg");
+		display: block;
+		margin-bottom: -30px;
+	}
+	.contact-us-btn-wrapper::after {
+		content: url("../img/triangles-after.svg");
+		display: block;
+		margin-top: 40px;
+	}
+	.contact-us-btn {
+		position: relative;
+		top: 1em;
+		padding: .5em 2em;
+		background-color: #FFD520;
+		border-radius: 2em;
+		color: black;
+		font-family: "Gotham XNarrow SSm A", "Gotham XNarrow SSm B", sans-serif;
+		font-weight: bold;
+	}
+}
+

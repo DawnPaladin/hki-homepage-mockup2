@@ -1,0 +1,22 @@
+{
+  "name": "homepage-mockup2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "harp server",
+    "deploy": "harp compile && surge www hki-homepage-mockup2.surge.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/webdevteamhki/homepage-mockup2.git"
+  },
+  "author": "James Harris",
+  "license": "UNLICENSED",
+  "homepage": "https://bitbucket.org/webdevteamhki/homepage-mockup2#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "harp": "^0.29.0",
+    "surge": "^0.20.1"
+  }
+}

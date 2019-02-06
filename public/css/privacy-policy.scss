@@ -1,0 +1,32 @@
+@import 'long-form';
+
+aside {
+	@media (min-width: 600px) {
+		float: right;
+		width: 300px;
+		margin-left: 1em;
+		padding: 0 1em;
+	}
+	@media (max-width: 599px) {
+		padding: 1px 1em;
+		margin-bottom: 1em;
+	}
+	background: white;
+	h2 {
+		font-size: 22px;
+		margin-top: 15px;
+	}
+	ul {
+		list-style-type: none;
+		padding-left: 10px;
+	}
+	.pdf-download-link::before {
+		content: url('/img/pdf-icon.png');
+		vertical-align: -15%;
+		margin-right: 5px;
+	}
+}
+
+.alert {
+	border-width: 2px;
+}

@@ -1,0 +1,21 @@
+main {
+	background-color: hsl(0, 0%, 90%);
+	color: hsl(0, 0%, 10%);
+	font-size: 18px;
+	line-height: 1.75em;
+	padding-bottom: 1em;
+}
+
+h1 {
+	font-size: 36px;
+	margin-bottom: 15px;
+}
+h2 {
+	margin-top: 25px;
+}
+
+.anchor {
+	&:link, &:visited, &:hover, &:active {
+		color: #414042;
+	}
+}

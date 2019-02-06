@@ -1,0 +1,95 @@
+.skip-to-main-content-link {
+	display: block;
+	position: absolute;
+	top: -30px;
+	width: 100%;
+	transition: top .15s;
+	background-color: hsl(0, 0%, 10%);
+	background-image: url('../img/dark-brushed-metal.jpg');
+	padding: 5px;
+	text-align: center;
+	color: hsl(0, 0%, 90%);
+	&:hover, &:active, &:focus {
+		color: white;
+		top: 0px;
+	}
+}
+
+.navbar-bg, .site-bar {
+	background: url("../img/dark-brushed-metal.jpg");
+	@media (max-width: 991px) {
+		display: none;
+	}
+}
+
+.navbar-bg {
+	overflow: visible;
+}
+
+.navbar {
+	padding: 0 15px;
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 0; // override main.min.css
+	min-height: 0; // override main.min.css
+	border: none;
+	a {
+		display: block;
+		padding: .5em 1em;
+	}
+	a:link, a:visited, a:hover, a:active {
+		color: hsl(0, 0, 80%);
+	}
+	a[href="#"] { text-decoration: none; } // no underline for hover-only links
+	ul {
+		list-style: none;
+		list-style-type: none;
+		padding-left: 0;
+		margin-bottom: 0;
+	}
+	li {
+		position: relative;
+		padding: 0;
+		&:hover {
+			background: hsla(0, 0, 100%, .07);
+		}
+	}
+
+	// first level
+	&>a { display: none; } // hide links that show/hide navigation on mobile
+	&>ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	&>ul>li {
+		height: 2.25em;
+	}
+	@media (min-width: 992px) {
+		&>ul>li:first-child {
+			margin-left: -1em;
+		}
+	}
+
+	// second level
+	ul ul {
+		display: none;
+		position: absolute;
+		z-index: 1;
+		top: 100%;
+		left: 0;
+		flex-direction: column;
+		width: max-content;
+		background: hsl(0, 0, 10%);
+	}
+	li:hover>ul {
+		display: flex;
+	}
+
+	// third level
+	ul ul ul {
+		top: 0%;
+		left: 100%;
+	}
+}
+

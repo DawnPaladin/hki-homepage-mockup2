@@ -1,0 +1,16 @@
+// mixins
+
+@mixin light-emphasis {
+	font-family: "Gotham XNarrow SSm A", "Gotham XNarrow SSm B", sans-serif;
+}
+
+@mixin darken-bg($opacity) {
+	position: relative;
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0; left: 0; width: 100%; height: 100%;
+		background-color: hsla(0, 0%, 0%, $opacity);
+	}
+}

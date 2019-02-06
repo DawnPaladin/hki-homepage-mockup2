@@ -1,0 +1,73 @@
+<link rel="stylesheet" href="/news-globe/globe.css">
+<link rel="stylesheet" href="/css/aws-gl.css">
+
+<section class="dark container-fluid">
+	<div class="row">
+		<div class="grid">
+			<div class="award-header">
+				<h1>Award Winning Supplier</h1>
+			</div>
+			<div class="globe-header">
+				<h1>Global Leader</h1>
+			</div>
+			<div class="award-margin-left"></div>
+			<div class="award-photo">
+				<img src="/img/award-photo.jpg" alt="photo of awards">
+			</div>
+			<div class="award-vector">
+				<img src="/img/HKI-trophy_animated.svg" alt="">
+			</div>
+			<div class="award-margin-right"></div>
+			<div class="bk-text">Burger King 2018 <strong>Supplier of the Year</strong> for Europe, Middle East, and Africa</div>
+			<div class="customer-obsessed-text">McDonald's 2017 <strong>Most Customer Obsessed Supplier</strong></div>
+			<div class="equipment-supplier-text">McDonald's 2017 <strong>Worldwide Equipment Supplier of the Year</strong></div>
+			<div class="globe-margin-left"></div>
+			<div class="globe-row">
+				<div class="globe loading">
+					<div class="hoverCircle"></div>
+					<div class="bgGlow"></div>
+				</div>
+			</div>
+			<div class="planet-img"></div>
+			<div class="globe-padding-right"></div>
+			<div class="globe-margin-right"></div>
+			<p class="globe-text">1,500 employees processing 275,000 orders and manufacturing over 6,000 SKUs in 90+ countries annually provides H+K the global footprint to exceed any and all customers' needs.</p>
+		</div>
+	</div>
+</section>
+
+<script>
+	if (bowser.msie) $('.award-vector').hide();
+	
+	var canvasWidth = 600, canvasHeight = 600, pathPrefix = "/news-globe/";
+	var globePath = "/news-globe/wireframe.obm";
+	$('.globe').css({ width: canvasWidth, height: canvasHeight });
+	var preloadImg = new Image();
+	preloadImg.src = "/news-globe/marker.svg";
+
+	responsiveJS.register({
+		name: "News globe",
+		url: "/news-globe/globe-en.js",
+		minWidth: 768,
+	});
+	
+	responsiveJS.register({
+		name: "Scrolly map",
+		url: "/vendor/jScrollability.min.js",
+		maxWidth: 768,
+		activationFunction: function() {
+			$.jScrollability([{
+				'selector': '.planet-img',
+				'start': function() { return $('.globe-header').offset().top; },
+				'end': function() { return $('body').height(); },
+				'fn': {
+					'background-position': {
+						'start': 0,
+						'end': 500,
+						'unit': '%'
+					}
+				}
+			}]);
+		}
+	});
+</script>

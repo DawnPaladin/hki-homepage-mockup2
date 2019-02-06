@@ -1,0 +1,123 @@
+.loading {
+	background-image: url('loading.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.globe-row {
+	display: flex;
+	position: absolute;
+	top: -20px;
+	flex-direction: row;
+	width: 99%;
+	justify-content: center;
+	align-items: center;
+	height: 700px;
+}
+.globe-row canvas {
+	width: 100%;
+	height: 100%;
+}
+.globe {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+}
+.globe canvas {
+	position: relative;
+	z-index: 2;
+}
+.hoverCircle, .bgGlow {
+	border-radius: 50%;
+	position: absolute;
+}
+.hoverCircle {
+	z-index: 3;
+}
+.bgGlow {
+	background: rgba(255, 255, 255, 0.5);
+	box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0.5);
+	opacity: 0;
+	z-index: 1;
+}
+.globe a {
+	text-decoration: underline;
+}
+
+.bubble-target {
+	position: absolute;
+	width: 28px;
+	z-index: 3;
+}
+.bubble-target .bubble {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0.5s, z-index 0.5s, opacity 0.5s;
+	transition-delay: 0.75s;
+	transition-timing-function: ease-in;
+	width: 120px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding: 5px;
+	border-radius: 6px;
+	z-index: 5;
+	position: absolute;
+	top: -15px;
+	right: 50px;
+}
+.bubble-target .bubble a {
+	color: white;
+}
+.bubble-target:hover {
+	z-index: 6;
+}
+.bubble-target:hover .bubble {
+	visibility: visible;
+	opacity: 1;
+	z-index: 6;
+	transition: 0.15s;
+	transition-delay: 0s;
+	transition-timing-function: ease-out;
+}
+.bubble-target .bubble::after { /* bubble "tail" */
+	content: "";
+	position: absolute;
+	left: 100%;
+	top: 1em;
+	margin-top: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: transparent transparent transparent black;
+}
+.marker {
+	display: block;
+	margin-left: -14px;
+	margin-top: -7px;
+}
+
+.news-header {
+	font-family: "Roboto Slab", serif;
+	font-weight: 700;
+	font-size: 1.5em;
+	margin-left: 1.6em;
+}
+.news-story {
+	margin-top: 1em;
+}
+.news-story .headline {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 1.25em;
+	margin-bottom: .2em;
+}
+.news-story .byline {
+	font-family: 'Roboto', sans-serif;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: .8em;
+}
+
+.two {
+	position: absolute;
+}
